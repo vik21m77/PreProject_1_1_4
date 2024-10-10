@@ -14,12 +14,10 @@ public class User {
     private Long id;
 
     @NotNull
-    @BatchSize(size = 255)
     @Column(name = "name")
     private String name;
 
     @NotNull
-    @BatchSize(size = 255)
     @Column(name = "last_name")
     private String lastName;
 
