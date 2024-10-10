@@ -1,20 +1,29 @@
 package jm.task.core.jdbc.model;
 
+import com.sun.istack.NotNull;
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class User {
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @BatchSize(size = 255)
     @Column(name = "name")
     private String name;
 
+    @NotNull
+    @BatchSize(size = 255)
     @Column(name = "last_name")
     private String lastName;
 
+    @NotNull
     @Column(name = "age")
     private Byte age;
 
